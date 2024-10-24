@@ -37,12 +37,12 @@ export const ContactForm = component$(() => {
 
   return (
     <form class="max-w-lg mx-auto p-8 bg-base-100 shadow-md rounded" onSubmit$={handleSubmit}>
-      <p class="text-center text-secondary mb-6 text-lg">
+      <p class="text-center text-secondary mb-4 text-lg">
         Enter your details to start a conversation. We are excited to hear from you!
       </p>
-      <div class="flex mb-4 space-x-4">
+      <div class="flex mb-2 space-x-4">
         <div class="w-1/2">
-          <label class="block text-secondary text-sm font-bold mb-2" for="firstName">
+          <label class="block text-secondary text-sm font-bold mb-1" for="firstName">
             First Name*
           </label>
           <input
@@ -54,7 +54,7 @@ export const ContactForm = component$(() => {
           />
         </div>
         <div class="w-1/2">
-          <label class="block text-secondary text-sm font-bold mb-2" for="lastName">
+          <label class="block text-secondary text-sm font-bold mb-1" for="lastName">
             Last Name*
           </label>
           <input
@@ -66,9 +66,9 @@ export const ContactForm = component$(() => {
           />
         </div>
       </div>
-      <div class="flex mb-4 space-x-4">
+      <div class="flex mb-2 space-x-4">
         <div class="w-1/2">
-          <label class="block text-secondary text-sm font-bold mb-2" for="email">
+          <label class="block text-secondary text-sm font-bold mb-1" for="email">
             Email*
           </label>
           <input
@@ -80,7 +80,7 @@ export const ContactForm = component$(() => {
           />
         </div>
         <div class="w-1/2">
-          <label class="block text-secondary text-sm font-bold mb-2" for="phoneNumber">
+          <label class="block text-secondary text-sm font-bold mb-1" for="phoneNumber">
             Phone Number
           </label>
           <input
@@ -91,9 +91,9 @@ export const ContactForm = component$(() => {
           />
         </div>
       </div>
-      <div class="flex mb-4 space-x-4">
+      <div class="flex mb-2 space-x-4">
         <div class="w-1/2">
-          <label class="block text-secondary text-sm font-bold mb-2" for="weddingDate">
+          <label class="block text-secondary text-sm font-bold mb-1" for="weddingDate">
             Wedding Date
           </label>
           <input
@@ -104,8 +104,8 @@ export const ContactForm = component$(() => {
           />
         </div>
         <div class="w-1/2">
-          <label class="block text-secondary text-sm font-bold mb-2" for="weddingVenue">
-            Wedding Venue and City
+          <label class="block text-secondary text-sm font-bold mb-1" for="weddingVenue">
+            Venue & City
           </label>
           <input
             type="text"
@@ -115,8 +115,8 @@ export const ContactForm = component$(() => {
           />
         </div>
       </div>
-      <div class="mb-4">
-        <label class="block text-secondary text-sm font-bold mb-2" for="referralSource">
+      <div class="mb-2">
+        <label class="block text-secondary text-sm font-bold mb-1" for="referralSource">
           How Did You Hear About Us
         </label>
         <input
@@ -126,8 +126,8 @@ export const ContactForm = component$(() => {
           bind:value={formData.referralSource}
         />
       </div>
-      <div class="mb-4">
-        <label class="block text-secondary text-sm font-bold mb-2" for="message">
+      <div class="mb-2">
+        <label class="block text-secondary text-sm font-bold mb-1" for="message">
           Message
         </label>
         <textarea
