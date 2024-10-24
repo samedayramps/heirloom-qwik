@@ -78,9 +78,9 @@
   top: 0;
   left: 0;
   right: 0; /* Ensure the overlay covers the full width */
-  bottom: 0; /* Allow the overlay to extend with the section */
+  height: 100%; /* Allow the overlay to extend with the section */
   background-image: url('/src/media/18-texture.webp'); /* New overlay image */
-  background-size: cover;
+  background-size: 100% auto; /* Fix the width, allow height to adjust */
   background-position: top; /* Align the top of the overlay with the top of the section */
   opacity: 0.2; /* Adjust opacity as needed */
   pointer-events: none; /* Ensures the overlay doesn't interfere with interactions */
