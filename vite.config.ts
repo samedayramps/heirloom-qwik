@@ -26,6 +26,11 @@ export default defineConfig(({ command, mode }): UserConfig => {
     optimizeDeps: {
       exclude: [],
     },
+    build: {
+      outDir: 'dist', // Explicitly specify the output directory
+      emptyOutDir: true, // Ensures the directory is cleared before a new build
+      sourcemap: mode === 'production', // Generate sourcemaps only in production
+    },
     server: {
       headers: {
         // Don't cache the server response in dev mode
