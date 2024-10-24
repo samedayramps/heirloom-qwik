@@ -2,7 +2,7 @@ import { component$, useSignal, useOnWindow, $ } from '@builder.io/qwik';
 import ImgLogo from '~/media/logo.svg?jsx'; // Ensure the logo is imported from the media directory
 import ImgLogoMobile from '~/media/logo-mobile.svg?jsx';
 
-export const Navbar = component$(() => {
+export const Navbar = component$(({ isModalOpen }: { isModalOpen: any }) => {
   const isScrolled = useSignal(false);
   const isDropdownOpen = useSignal(false);
 
@@ -74,7 +74,12 @@ export const Navbar = component$(() => {
         </ul>
       </div>
       <div class="navbar-end">
-        <a href="#" class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full">LET'S TALK</a>
+        <button
+          class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full"
+          onClick$={() => (isModalOpen.value = true)}
+        >
+          LET'S TALK
+        </button>
       </div>
     </div>
   );
