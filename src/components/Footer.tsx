@@ -47,3 +47,4 @@ export const Footer = component$(() => {
     </footer>
   );
 });
+
