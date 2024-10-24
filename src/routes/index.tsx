@@ -10,7 +10,7 @@ export default component$(() => {
 
   return (
     <>
-      <section class="bg-base-100 text-secondary py-20">
+      <section class="bg-base-100 text-secondary py-32">
         <div class="container mx-auto text-center">
           <h1 class="text-4xl font-bold mb-4 font-playfair">
             Your wedding day, remembered for <span class="font-ephesis text-6xl">generations</span>
@@ -23,8 +23,8 @@ export default component$(() => {
       <section id="features" class="py-20 bg-neutral heirloom-section">
         <div class="w-full relative">
           <div class="container mx-auto text-center relative px-4 md:px-8 lg:px-16">
-            <p class="text-3xl mb-2 font-ephesis">Timeless Keepsake</p>
-            <h2 class="text-3xl font-bold mb-10 font-playfair">Your Heirloom Film</h2>
+            <p class="text-3xl mb-2 font-ephesis text-secondary">Timeless Keepsake</p>
+            <h2 class="text-3xl font-bold mb-10 font-playfair text-secondary">Your Heirloom Film</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div class="heirloom-card">
                 <h3 class="text-xl font-semibold mb-4 font-playfair">Full Day Coverage</h3>
@@ -76,7 +76,7 @@ export default component$(() => {
               </div>
             ))}
           </div>
-          <a href="#contact" class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full mt-8">CONTACT US</a> {/* Button with bold text */}
+          <a href="#contact" class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full mt-8">CONTACT US</a>
         </div>
       </section>
     </>

@@ -57,14 +57,14 @@
   background-image: url('/src/media/16-texture-square.webp'); /* Updated image */
   background-size: cover;
   background-position: center;
-  opacity: .5; /* Adjust opacity as needed */
+  opacity: 0.5; /* Adjust opacity as needed */
   pointer-events: none; /* Ensures the overlay doesn't interfere with interactions */
-  z-index: 2; /* Ensure the overlay is on top */
+  z-index: 1; /* Ensure the overlay is below the content */
 }
 
 .heirloom-section > * {
   position: relative;
-  z-index: 1; /* Ensure content is below the overlay */
+  z-index: 2; /* Ensure content is above the overlay */
 }
 
 .faq-section {
