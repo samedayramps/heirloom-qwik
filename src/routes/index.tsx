@@ -45,7 +45,7 @@ export default component$(() => {
 
       <section id="faq" class="py-20 bg-accent faq-section">
         <div class="container mx-auto text-center px-6 md:px-8 lg:px-16">
-          <h2 class="text-3xl font-bold mb-12 font-playfair text-base-100">Questions?</h2>
+          <h2 class="text-3xl font-bold mb-12 font-playfair text-base-100">Have questions?</h2>
           <div class="space-y-4">
             {[
               {
@@ -76,6 +76,7 @@ export default component$(() => {
               </div>
             ))}
           </div>
+          <a href="#contact" class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full mt-8">CONTACT US</a> {/* Button with bold text */}
         </div>
       </section>
     </>
