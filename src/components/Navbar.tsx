@@ -24,7 +24,7 @@ export const Navbar = component$(() => {
           </div>
           <ul
             tabIndex={0}
-            class="menu menu-sm dropdown-content bg-secondary text-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            class="menu menu-sm dropdown-content bg-accent text-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li><a href="#" class="text-base-100 font-opensans">Item 1</a></li>
             <li>
