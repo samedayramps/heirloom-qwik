@@ -1,10 +1,26 @@
+import { component$, useSignal, useOnWindow, $ } from '@builder.io/qwik';
 import ImgLogo from '~/media/logo.svg?jsx'; // Ensure the logo is imported from the media directory
-import { component$ } from '@builder.io/qwik';
 import ImgLogoMobile from '~/media/logo-mobile.svg?jsx';
 
 export const Navbar = component$(() => {
+  const isScrolled = useSignal(false);
+
+  useOnWindow(
+    'scroll',
+    $(() => {
+      isScrolled.value = window.scrollY > 0;
+    })
+  );
+
   return (
-    <div class="navbar bg-secondary sticky top-0 z-50">
+    <div
+      class={[
+        'navbar bg-secondary fixed top-0 left-0 right-0 z-50 transition-transform transition-width duration-500 ease-in-out',
+        isScrolled.value
+          ? 'transform translate-y-5 mx-auto w-[calc(100%-40px)] rounded-full shadow-lg' // Adjusted to move down and center
+          : 'transform translate-y-0 w-full rounded-none',
+      ]}
+    >
       <div class="navbar-start">
         <div class="dropdown">
           <div tabIndex={0} role="button" class="lg:hidden">
@@ -42,7 +58,7 @@ export const Navbar = component$(() => {
           {/* Logo for larger screens */}
           <ImgLogo class="hidden md:block h-8" aria-label="Logo" />
           {/* Logo for mobile screens */}
-          <ImgLogoMobile class="block md:hidden h-6" aria-label="Mobile Logo" /> {/* Adjusted height */}
+          <ImgLogoMobile class="block md:hidden h-6" aria-label="Mobile Logo" />
         </a>
       </div>
       <div class="navbar-center hidden lg:flex">
