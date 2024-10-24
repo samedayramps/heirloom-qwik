@@ -4,11 +4,15 @@ import ImgLogoMobile from '~/media/logo-mobile.svg?jsx';
 
 export const Navbar = component$(() => {
   const isScrolled = useSignal(false);
+  const isDropdownOpen = useSignal(false);
 
   useOnWindow(
     'scroll',
     $(() => {
       isScrolled.value = window.scrollY > 0;
+      if (isDropdownOpen.value) {
+        isDropdownOpen.value = false; // Close dropdown on scroll
+      }
     })
   );
 
@@ -23,7 +27,12 @@ export const Navbar = component$(() => {
     >
       <div class="navbar-start">
         <div class="dropdown">
-          <div tabIndex={0} role="button" class="lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            class="lg:hidden"
+            onClick$={() => (isDropdownOpen.value = !isDropdownOpen.value)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-8 w-8 stroke-base-100"
@@ -39,22 +48,18 @@ export const Navbar = component$(() => {
               />
             </svg>
           </div>
-          <ul
-            tabIndex={0}
-            class="menu menu-sm dropdown-content bg-accent text-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-          >
-            <li><a href="#" class="text-base-100 font-opensans">Item 1</a></li>
-            <li>
-              <a href="#" class="text-base-100 font-opensans">Parent</a>
-              <ul class="p-2">
-                <li><a href="#" class="text-base-100 font-opensans">Submenu 1</a></li>
-                <li><a href="#" class="text-base-100 font-opensans">Submenu 2</a></li>
-              </ul>
-            </li>
-            <li><a href="#" class="text-base-100 font-opensans">Item 3</a></li>
-          </ul>
+          {isDropdownOpen.value && (
+            <ul
+              tabIndex={0}
+              class="menu menu-sm dropdown-content bg-secondary text-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li><a href="/about" class="text-base-100 font-opensans">About</a></li>
+              <li><a href="/films" class="text-base-100 font-opensans">Films</a></li>
+              <li><a href="/blog" class="text-base-100 font-opensans">Blog</a></li>
+            </ul>
+          )}
         </div>
-        <a href="#" class="btn btn-ghost text-xl text-accent font-playfair">
+        <a href="/" class="btn btn-ghost text-xl text-accent font-playfair">
           {/* Logo for larger screens */}
           <ImgLogo class="hidden md:block h-8" aria-label="Logo" />
           {/* Logo for mobile screens */}
@@ -63,21 +68,13 @@ export const Navbar = component$(() => {
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
-          <li><a href="#" class="text-base-100 font-opensans">Item 1</a></li>
-          <li>
-            <details>
-              <summary class="text-base-100 font-opensans">Parent</summary>
-              <ul class="p-2">
-                <li><a href="#" class="text-base-100 font-opensans">Submenu 1</a></li>
-                <li><a href="#" class="text-base-100 font-opensans">Submenu 2</a></li>
-              </ul>
-            </details>
-          </li>
-          <li><a href="#" class="text-base-100 font-opensans">Item 3</a></li>
+          <li><a href="/about" class="text-base-100 font-opensans">About</a></li>
+          <li><a href="/films" class="text-base-100 font-opensans">Films</a></li>
+          <li><a href="/blog" class="text-base-100 font-opensans">Blog</a></li>
         </ul>
       </div>
       <div class="navbar-end">
-        <a href="#" class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full">INQUIRE</a>
+        <a href="#" class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full">LET'S TALK</a>
       </div>
     </div>
   );
