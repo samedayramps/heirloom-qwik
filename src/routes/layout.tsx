@@ -18,8 +18,10 @@ export default component$(() => {
   return (
     <>
       <Navbar />
-      <Slot />
-      <Footer /> {/* Add the Footer component here */}
+      <div> {/* Removed margin classes */}
+        <Slot />
+      </div>
+      <Footer />
     </>
   );
 });

@@ -21,21 +21,23 @@ export default component$(() => {
       </section>
 
       <section id="features" class="py-20 bg-neutral heirloom-section">
-        <div class="container mx-auto text-center relative">
-          <h2 class="text-3xl font-bold mb-4 font-playfair">Your Heirloom Film</h2>
-          <p class="text-3xl mb-8 font-ephesis">Timeless Keepsake</p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="heirloom-card">
-              <h3 class="text-xl font-semibold mb-4 font-playfair">Full Day Coverage</h3>
-              <p class="font-opensans">We start filming at morning preparations and end after your sendoff. Every ceremony word, reception speech, and dance move is captured. We're there before you arrive and after you leave.</p>
-            </div>
-            <div class="heirloom-card">
-              <h3 class="text-xl font-semibold mb-4 font-playfair">Everyone You Love</h3>
-              <p class="font-opensans">Your marriage is built on the foundation of family and friendships. These relationships deserve to be part of your wedding story. We capture the people who shaped your journey to this day.</p>
-            </div>
-            <div class="heirloom-card">
-              <h3 class="text-xl font-semibold mb-4 font-playfair">Pour Another Glass</h3>
-              <p class="font-opensans">Your wedding story runs around 30 minutes long. Not a quick highlight reel—you'll want to open a bottle of wine and settle in to watch. Every key moment is included.</p>
+        <div class="w-full relative">
+          <div class="container mx-auto text-center relative px-4 md:px-8 lg:px-16">
+            <p class="text-3xl mb-2 font-ephesis">Timeless Keepsake</p>
+            <h2 class="text-3xl font-bold mb-10 font-playfair">Your Heirloom Film</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="heirloom-card">
+                <h3 class="text-xl font-semibold mb-4 font-playfair">Full Day Coverage</h3>
+                <p class="font-opensans">We start filming at morning preparations and end after your sendoff. Every ceremony word, reception speech, and dance move is captured. We're there before you arrive and after you leave.</p>
+              </div>
+              <div class="heirloom-card">
+                <h3 class="text-xl font-semibold mb-4 font-playfair">Everyone You Love</h3>
+                <p class="font-opensans">Your marriage is built on the foundation of family and friendships. These relationships deserve to be part of your wedding story. We capture the people who shaped your journey to this day.</p>
+              </div>
+              <div class="heirloom-card">
+                <h3 class="text-xl font-semibold mb-4 font-playfair">Pour Another Glass</h3>
+                <p class="font-opensans">Your wedding story runs around 30 minutes long. Not a quick highlight reel—you'll want to open a bottle of wine and settle in to watch. Every key moment is included.</p>
+              </div>
             </div>
           </div>
         </div>

@@ -27,12 +27,19 @@
 .heirloom-card {
   position: relative;
   background-image: url('/src/media/white-paint-block.png');
-  background-size: 100% 100%; /* Ensures the image stretches to fill */
+  background-size: 100% 100%;
   background-position: center;
   padding: 20px;
   border-radius: 8px;
   color: #333;
   text-align: center;
+  margin: 0; /* Default margin */
+}
+
+@media (max-width: 768px) {
+  .heirloom-card {
+    margin: 0 24px; /* Extra horizontal margin for stacked layout */
+  }
 }
 
 .heirloom-section {

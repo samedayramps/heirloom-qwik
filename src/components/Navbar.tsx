@@ -38,7 +38,7 @@ export const Navbar = component$(() => {
           </ul>
         </div>
         <a href="#" class="btn btn-ghost text-xl text-accent font-playfair">
-          <ImgLogo class="h-8" aria-label="Logo" /> {/* Use aria-label for accessibility */}
+          <ImgLogo class="h-8" aria-label="Logo" />
         </a>
       </div>
       <div class="navbar-center hidden lg:flex">
@@ -57,7 +57,7 @@ export const Navbar = component$(() => {
         </ul>
       </div>
       <div class="navbar-end">
-        <a href="#" class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold">INQUIRE</a>
+        <a href="#" class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full">INQUIRE</a>
       </div>
     </div>
   );
