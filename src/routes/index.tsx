@@ -44,7 +44,7 @@ export default component$(() => {
       </section>
 
       <section id="faq" class="py-20 bg-accent faq-section">
-        <div class="container mx-auto text-center">
+        <div class="container mx-auto text-center px-6 md:px-8 lg:px-16"> {/* Adjusted padding for smaller screens */}
           <h2 class="text-3xl font-bold mb-8 font-playfair">Frequently Asked Questions</h2>
           <div class="space-y-4">
             {[

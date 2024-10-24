@@ -1,5 +1,6 @@
 import ImgLogo from '~/media/logo.svg?jsx'; // Ensure the logo is imported from the media directory
 import { component$ } from '@builder.io/qwik';
+import ImgLogoMobile from '~/media/logo-mobile.svg?jsx';
 
 export const Navbar = component$(() => {
   return (
@@ -38,7 +39,10 @@ export const Navbar = component$(() => {
           </ul>
         </div>
         <a href="#" class="btn btn-ghost text-xl text-accent font-playfair">
-          <ImgLogo class="h-8" aria-label="Logo" />
+          {/* Logo for larger screens */}
+          <ImgLogo class="hidden md:block h-8" aria-label="Logo" />
+          {/* Logo for mobile screens */}
+          <ImgLogoMobile class="block md:hidden h-6" aria-label="Mobile Logo" /> {/* Adjusted height */}
         </a>
       </div>
       <div class="navbar-center hidden lg:flex">
