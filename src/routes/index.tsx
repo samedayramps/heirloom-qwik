@@ -43,7 +43,7 @@ export default component$(() => {
         </div>
       </section>
 
-      <section id="faq" class="py-20 bg-accent">
+      <section id="faq" class="py-20 bg-accent faq-section">
         <div class="container mx-auto text-center">
           <h2 class="text-3xl font-bold mb-8 font-playfair">Frequently Asked Questions</h2>
           <div class="space-y-4">
