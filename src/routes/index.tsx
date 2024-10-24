@@ -1,7 +1,9 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
+import { ContactModal } from "~/components/ContactModal";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
+  const isModalOpen = useSignal(false);
   const openAccordion = useSignal<number | null>(null);
 
   const toggleAccordion = $((index: number) => {
@@ -16,7 +18,9 @@ export default component$(() => {
             Your wedding day, remembered for <span class="font-ephesis text-6xl">generations</span>
           </h1>
           <p class="text-lg mb-8 font-opensans">Cinematic Documentary Wedding Films</p>
-          <a href="#features" class="bg-secondary text-base-100 px-6 py-3 rounded-full font-semibold font-opensans">WATCH FILMS</a>
+          <a href="/films" class="bg-secondary text-base-100 px-6 py-3 rounded-full font-semibold font-opensans">
+            WATCH FILMS
+          </a>
         </div>
       </section>
 
@@ -76,9 +80,16 @@ export default component$(() => {
               </div>
             ))}
           </div>
-          <a href="#contact" class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full mt-8">CONTACT US</a>
+          <button
+            class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full mt-8"
+            onClick$={() => (isModalOpen.value = true)}
+          >
+            LET'S TALK
+          </button>
         </div>
       </section>
+
+      <ContactModal isModalOpen={isModalOpen} />
     </>
   );
 });
