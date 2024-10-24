@@ -1,0 +1,25 @@
+/**
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
+ */
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Open+Sans:wght@400&family=Playfair+Display:wght@300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font classes */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300; /* Light weight */
+}
+
+.font-opensans {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400; /* Regular weight */
+}
+
+.font-ephesis {
+  font-family: 'Ephesis', cursive;
+  /* Ephesis typically comes in a single weight, so no need to specify */
+}
