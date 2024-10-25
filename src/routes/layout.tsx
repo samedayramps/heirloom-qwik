@@ -10,7 +10,7 @@ export default component$(() => {
     <>
       <Navbar isModalOpen={isModalOpen} />
       <ContactModal isModalOpen={isModalOpen} />
-      <div>
+      <div class="mt-20 transition-margin duration-500 ease-in-out"> {/* Added transition */}
         <Slot />
       </div>
       <Footer />

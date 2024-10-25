@@ -48,8 +48,16 @@ export default component$(() => {
       </section>
 
       <section id="faq" class="py-20 bg-accent faq-section">
-        <div class="container mx-auto text-center px-6 md:px-8 lg:px-16">
-          <h2 class="text-3xl font-bold mb-12 font-playfair text-base-100">Have questions?</h2>
+        <div class="container mx-auto px-6 md:px-8 lg:px-16">
+          <div class="flex items-center justify-center space-x-4 mb-12">
+            <h2 class="text-3xl font-bold font-playfair text-base-100">Have questions?</h2>
+            <button
+              class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full"
+              onClick$={() => (isModalOpen.value = true)}
+            >
+              LET'S TALK
+            </button>
+          </div>
           <div class="space-y-4">
             {[
               {
@@ -80,12 +88,6 @@ export default component$(() => {
               </div>
             ))}
           </div>
-          <button
-            class="btn bg-neutral hover:bg-neutral-dark text-secondary border-none font-opensans font-bold rounded-full mt-8"
-            onClick$={() => (isModalOpen.value = true)}
-          >
-            LET'S TALK
-          </button>
         </div>
       </section>
 
@@ -93,7 +95,6 @@ export default component$(() => {
     </>
   );
 });
-
 export const head: DocumentHead = {
   title: "Welcome to Qwik",
   meta: [
