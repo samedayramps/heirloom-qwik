@@ -30,11 +30,11 @@ const FAQS = [
     answer: "Your complete wedding film will be delivered within 12 weeks of your wedding date. We'll send you easy-to-share digital files, plus a beautifully packaged USB drive for safekeeping.",
   },
   {
-    question: "What happens after we book?",
+    question: "What's the process after booking?",
     answer: "We'll schedule a pre-wedding consultation to discuss your vision, timeline, and special moments you want captured. We stay in touch throughout the planning process to ensure everything runs smoothly.",
   },
   {
-    question: "Do you film destination weddings?",
+    question: "Do you travel for weddings?",
     answer: "Yes! We love traveling for weddings. All destinations welcome. Travel fees are determined based on location - just let us know where you're planning to celebrate.",
   },
 ];
@@ -65,7 +65,9 @@ const Features = component$(() => (
   <section id="features" class="py-20 bg-neutral heirloom-section">
     <div class="w-full relative">
       <div class="container mx-auto text-center relative px-4 md:px-8 lg:px-16">
-        <h2 class="text-3xl font-bold mb-10 font-playfair text-secondary">What You Get</h2>
+        <h2 class="text-3xl font-bold mb-10 font-playfair text-secondary">
+          Our <span class="font-ephesis text-5xl mr-2">unique</span> approach
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {FEATURES.map((feature, index) => (
             <FeatureCard key={index} title={feature.title} description={feature.description} />
@@ -153,6 +155,20 @@ const PhilosophySection = component$(() => (
   </section>
 ));
 
+const WhatYoullExperience = component$(() => (
+  <section id="experience" class="py-20 bg-base-100">
+    <div class="container mx-auto text-center px-4 md:px-8 lg:px-16">
+      <h2 class="text-3xl font-bold mb-10 font-playfair text-secondary">
+        What you'll <span class="font-ephesis text-5xl">experience</span>
+      </h2>
+      <p class="font-opensans mb-8">
+        From the moment you book with us, you'll experience a seamless and personalized journey. We prioritize understanding your vision and capturing the essence of your special day with creativity and care.
+      </p>
+      {/* Add more content or components as needed */}
+    </div>
+  </section>
+));
+
 export default component$(() => {
   const isModalOpen = useSignal(false);
 
@@ -166,6 +182,7 @@ export default component$(() => {
       <Hero />
       <PhilosophySection />
       <Features />
+      <WhatYoullExperience />
       <section id="faq" class="py-20 bg-accent faq-section">
         <div class="container mx-auto px-6 md:px-8 lg:px-16">
           <div class="flex items-center justify-center space-x-4 mb-12">
