@@ -43,6 +43,9 @@ export default defineConfig(({ command, mode }): UserConfig => {
         "Cache-Control": "public, max-age=600",
       },
     },
+    ssr: {
+      noExternal: true, // Ensures SSR is enabled globally outside of `server`
+    },
   };
 });
 

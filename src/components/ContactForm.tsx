@@ -1,6 +1,4 @@
-import { component$, useSignal } from '@builder.io/qwik';
-import { Form } from '@builder.io/qwik-city';
-import { useContactFormAction } from '~/routes/contact';
+import { component$, useSignal, $ } from '@builder.io/qwik';
 
 export const ContactForm = component$(() => {
   const formData = {
@@ -14,10 +12,35 @@ export const ContactForm = component$(() => {
     referralSource: useSignal(''),
   };
 
-  const contactFormAction = useContactFormAction();
+  const handleSubmit = $(async (e: Event) => {
+    e.preventDefault();
+  
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstName: formData.firstName.value,
+        lastName: formData.lastName.value,
+        email: formData.email.value,
+        phoneNumber: formData.phoneNumber.value,
+        weddingDate: formData.weddingDate.value,
+        weddingVenue: formData.weddingVenue.value,
+        message: formData.message.value,
+        referralSource: formData.referralSource.value,
+      }),
+    });
+  
+    if (response.ok) {
+      console.log('Form submitted successfully!');
+    } else {
+      console.error('Form submission failed.');
+    }
+  });
 
   return (
-    <Form action={contactFormAction} class="max-w-lg mx-auto p-8 bg-base-100 shadow-md rounded">
+    <form onSubmit$={handleSubmit} class="max-w-lg mx-auto p-8 bg-base-100 shadow-md rounded">
       <p class="text-center text-secondary mb-4 text-lg">
         Enter your details to start a conversation. We are excited to hear from you!
       </p>
@@ -118,14 +141,8 @@ export const ContactForm = component$(() => {
         />
       </div>
       <div class="flex items-center justify-between">
-        <button
-          type="submit"
-          class="btn btn-primary"
-        >
-          Submit
-        </button>
-        {contactFormAction.value?.success && <p>{contactFormAction.value.message}</p>}
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
-    </Form>
+    </form>
   );
 });

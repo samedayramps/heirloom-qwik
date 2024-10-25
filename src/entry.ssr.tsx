@@ -18,6 +18,10 @@ import { manifest } from "@qwik-client-manifest";
 import Root from "./root";
 
 export default function (opts: RenderToStreamOptions) {
+  // Log the incoming SSR options and data to inspect them
+  console.log('SSR render started with options:', opts);
+  console.log('Server data:', opts.serverData);
+
   return renderToStream(<Root />, {
     manifest,
     ...opts,
@@ -29,5 +33,13 @@ export default function (opts: RenderToStreamOptions) {
     serverData: {
       ...opts.serverData,
     },
-  });
+  })
+    .then(result => {
+      console.log('SSR render completed successfully.');
+      return result;
+    })
+    .catch(error => {
+      console.error('SSR render failed:', error);
+      throw error;
+    });
 }
