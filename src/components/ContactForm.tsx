@@ -1,4 +1,6 @@
-import { component$, useSignal, $ } from '@builder.io/qwik';
+import { component$, useSignal } from '@builder.io/qwik';
+import { Form } from '@builder.io/qwik-city';
+import { useContactFormAction } from '~/routes/contact';
 
 export const ContactForm = component$(() => {
   const formData = {
@@ -12,31 +14,10 @@ export const ContactForm = component$(() => {
     referralSource: useSignal(''),
   };
 
-  const handleSubmit = $(() => {
-    const email = formData.email.value;
-    if (!email || !validateEmail(email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-    console.log('Form submitted:', {
-      firstName: formData.firstName.value,
-      lastName: formData.lastName.value,
-      email: formData.email.value,
-      phoneNumber: formData.phoneNumber.value,
-      weddingDate: formData.weddingDate.value,
-      weddingVenue: formData.weddingVenue.value,
-      message: formData.message.value,
-      referralSource: formData.referralSource.value,
-    });
-  });
-
-  const validateEmail = $((email: string) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  });
+  const contactFormAction = useContactFormAction();
 
   return (
-    <form class="max-w-lg mx-auto p-8 bg-base-100 shadow-md rounded" onSubmit$={handleSubmit}>
+    <Form action={contactFormAction} class="max-w-lg mx-auto p-8 bg-base-100 shadow-md rounded">
       <p class="text-center text-secondary mb-4 text-lg">
         Enter your details to start a conversation. We are excited to hear from you!
       </p>
@@ -143,7 +124,8 @@ export const ContactForm = component$(() => {
         >
           Submit
         </button>
+        {contactFormAction.value?.success && <p>{contactFormAction.value.message}</p>}
       </div>
-    </form>
+    </Form>
   );
 });

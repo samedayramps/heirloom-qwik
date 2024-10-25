@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik';
-import { ContactForm } from './ContactForm';
+import { SimpleContactForm } from './SimpleContactForm';
 
 export const ContactModal = component$(({ isModalOpen }: { isModalOpen: any }) => {
   return (
@@ -13,7 +13,7 @@ export const ContactModal = component$(({ isModalOpen }: { isModalOpen: any }) =
             >
               ✕
             </button>
-            <ContactForm />
+            <SimpleContactForm />
           </div>
         </div>
       )}

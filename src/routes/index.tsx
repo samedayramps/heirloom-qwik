@@ -7,16 +7,20 @@ import { blogPosts } from './blog/index';
 // Static content moved outside the component
 const FEATURES = [
   {
-    title: "Full Day Coverage",
-    description: "We start filming at morning preparations and end after your sendoff. Every ceremony word, reception speech, and dance move is captured. We're there before you arrive and after you leave."
+    title: "The Full Story",
+    description: (
+      <>
+        This isn't a quick highlight video—it's the complete story of your day. Get comfortable, pour some wine, and relive every moment. <em>Our films typically run 30 minutes.</em>
+      </>
+    )
   },
   {
-    title: "Everyone You Love",
-    description: "Your marriage is built on the foundation of family and friendships. These relationships deserve to be part of your wedding story. We capture the people who shaped your journey to this day."
+    title: "Unlimited Hours",
+    description: "We film your entire day—from the wedding party getting ready until your sparkler exit. No hourly limits. No watching the clock. Just enjoy your wedding day."
   },
   {
-    title: "Pour Another Glass",
-    description: "Your wedding story runs around 30 minutes long. Not a quick highlight reel—you'll want to open a bottle of wine and settle in to watch. Every key moment is included."
+    title: "All Your People",
+    description: "Your wedding film includes everyone you love. We capture real moments and natural conversations with family and friends throughout your day. Because they're part of your story."
   }
 ];
 
@@ -50,7 +54,7 @@ const Hero = component$(() => (
   </section>
 ));
 
-const FeatureCard = component$(({ title, description }: { title: string; description: string }) => (
+const FeatureCard = component$(({ title, description }: { title: string; description: any }) => (
   <div class="heirloom-card">
     <h3 class="text-xl font-semibold mb-4 font-playfair">{title}</h3>
     <p class="font-opensans">{description}</p>
@@ -61,8 +65,7 @@ const Features = component$(() => (
   <section id="features" class="py-20 bg-neutral heirloom-section">
     <div class="w-full relative">
       <div class="container mx-auto text-center relative px-4 md:px-8 lg:px-16">
-        <p class="text-3xl mb-2 font-ephesis text-secondary">Timeless Keepsake</p>
-        <h2 class="text-3xl font-bold mb-10 font-playfair text-secondary">Your Heirloom Film</h2>
+        <h2 class="text-3xl font-bold mb-10 font-playfair text-secondary">What You Get</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {FEATURES.map((feature, index) => (
             <FeatureCard key={index} title={feature.title} description={feature.description} />
@@ -138,6 +141,18 @@ const LatestBlogPosts = component$(() => {
   );
 });
 
+const PhilosophySection = component$(() => (
+  <section class="bg-tertiary text-white py-20 philosophy-section">
+    <div class="container mx-auto px-6 md:px-8 lg:px-16 text-center">
+      <h2 class="text-3xl font-bold mb-4 font-playfair">Our Philosophy</h2>
+      <p class="mb-8 font-opensans">
+        At our core, we believe in capturing the essence of every moment. Our philosophy is rooted in authenticity, creativity, and a deep respect for the stories we tell. We strive to create timeless pieces that resonate with the heart and soul.
+      </p>
+      {/* Add more content or components as needed */}
+    </div>
+  </section>
+));
+
 export default component$(() => {
   const isModalOpen = useSignal(false);
 
@@ -149,6 +164,7 @@ export default component$(() => {
   return (
     <>
       <Hero />
+      <PhilosophySection />
       <Features />
       <section id="faq" class="py-20 bg-accent faq-section">
         <div class="container mx-auto px-6 md:px-8 lg:px-16">

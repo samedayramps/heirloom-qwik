@@ -91,3 +91,100 @@
   position: relative;
   z-index: 1; /* Ensure content is below the overlay */
 }
+
+.philosophy-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/src/media/9-texture.webp'); /* Path to your texture image */
+  background-size: cover;
+  background-position: center;
+  opacity: .1; /* Adjust opacity as needed */
+  pointer-events: none; /* Ensures the overlay doesn't interfere with interactions */
+  z-index: 1; /* Ensure the overlay is below the content */
+}
+
+.philosophy-section > * {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
+/* Remove overlay from navbar */
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/src/media/9-texture.webp'); /* Path to your texture image */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05; /* Adjust opacity as needed */
+  pointer-events: none; /* Ensures the overlay doesn't interfere with interactions */
+  z-index: 1; /* Ensure the overlay is below the content */
+}
+
+.footer > * {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
+/* Add custom styles for the blog post */
+.article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.article-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.article-date {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.article-content {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #444;
+}
+
+.article-content h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.article-content ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content p {
+  margin-bottom: 1.5rem;
+}
