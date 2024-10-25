@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         'neutral-dark': '#C5B59D', // Slightly darker shade of neutral
-        'tertiary': '#69343A', // Added tertiary color
+        'tertiary': '#645343', // Added tertiary color
       },
     },
   },
@@ -23,7 +23,7 @@ export default {
           "success": "#009485",
           "warning": "#ff9900",
           "error": "#ff5724",
-          "tertiary": "#69343A", // Ensure this matches
+          "tertiary": "#645343", // Ensure this matches
         },
       },
     ],

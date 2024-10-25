@@ -3,6 +3,7 @@ import { ContactModal } from "~/components/ContactModal";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$ } from '@builder.io/qwik-city';
 import { blogPosts } from './blog/index';
+import { Stepper, type StepperStep } from "~/components/Stepper";
 
 // Static content moved outside the component
 const FEATURES = [
@@ -155,19 +156,40 @@ const PhilosophySection = component$(() => (
   </section>
 ));
 
-const WhatYoullExperience = component$(() => (
-  <section id="experience" class="py-20 bg-base-100">
-    <div class="container mx-auto text-center px-4 md:px-8 lg:px-16">
-      <h2 class="text-3xl font-bold mb-10 font-playfair text-secondary">
-        What you'll <span class="font-ephesis text-5xl">experience</span>
-      </h2>
-      <p class="font-opensans mb-8">
-        From the moment you book with us, you'll experience a seamless and personalized journey. We prioritize understanding your vision and capturing the essence of your special day with creativity and care.
-      </p>
-      {/* Add more content or components as needed */}
-    </div>
-  </section>
-));
+const WhatYoullExperience = component$(() => {
+  const steps: StepperStep[] = [
+    {
+      title: "Discovery Call",
+      description: "We'll start with a friendly chat to discuss your vision and answer any questions. It's a chance to see if we're the right fit to capture your special day.",
+    },
+    {
+      title: "Personalized Planning",
+      description: "As your wedding approaches, we'll meet to learn more about you, your family, and your wedding plans. This helps us prepare to film your day in a way that truly reflects who you are.",
+    },
+    {
+      title: "Your Wedding Day",
+      description: "On your big day, we'll be there from start to finish, capturing real moments without getting in the way. You can relax and enjoy every second while we document the memories.",
+    },
+    {
+      title: "Receive Your Heirloom Film",
+      description: "Within 90 days after your wedding, you'll receive your film in a beautiful keepsake box. Gather your loved ones, pour some wine, and relive the magic. This isn't just a film; it's an heirloom to cherish for generations.",
+    }
+  ];
+
+  return (
+    <section id="experience" class="py-20 bg-base-100">
+      <div class="container mx-auto px-4 md:px-8 lg:px-16">
+        <h2 class="text-3xl font-bold mb-6 font-playfair text-secondary text-center">
+          Your <span class="font-ephesis text-5xl">experience</span>
+        </h2>
+        <p class="font-opensans mb-12 text-lg max-w-3xl mx-auto text-center">
+          From our first hello to the moment you receive your heirloom film, we're here to make everything easy and enjoyable.
+        </p>
+        <Stepper steps={steps} />
+      </div>
+    </section>
+  );
+});
 
 export default component$(() => {
   const isModalOpen = useSignal(false);

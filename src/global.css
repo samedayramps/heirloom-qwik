@@ -107,7 +107,7 @@
   background-image: url('/src/media/9-texture.webp'); /* Path to your texture image */
   background-size: cover;
   background-position: center;
-  opacity: .1; /* Adjust opacity as needed */
+  opacity: .05; /* Adjust opacity as needed */
   pointer-events: none; /* Ensures the overlay doesn't interfere with interactions */
   z-index: 1; /* Ensure the overlay is below the content */
 }
