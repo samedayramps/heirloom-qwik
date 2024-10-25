@@ -18,7 +18,7 @@ export const Stepper = component$<StepperProps>(({ steps }) => {
             <span class="size-8 flex justify-center items-center shrink-0 bg-neutral font-light text-base-100 rounded-full dark:bg-neutral-dark dark:text-white text-base">
               {index + 1}
             </span>
-            <div class="mt-2 w-px h-full md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 bg-neutral-dark group-last:hidden dark:bg-neutral-700"></div>
+            <div class="mt-2 w-0.5 h-full md:mt-0 md:ms-2 md:w-full md:h-0.5 md:flex-1 bg-neutral-dark group-last:hidden dark:bg-neutral-700 rounded-full opacity-50"></div>
           </div>
           <div class="grow md:grow-0 md:mt-3 pb-5">
             <span class="block text-xl font-bold font-playfair text-secondary dark:text-white mb-2">

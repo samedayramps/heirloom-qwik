@@ -47,7 +47,7 @@ const Hero = component$(() => (
       <h1 class="text-4xl font-bold mb-4 font-playfair">
         Your wedding day, remembered for <span class="font-ephesis text-6xl">generations</span>
       </h1>
-      <p class="text-lg mb-8 font-opensans">Cinematic Documentary Wedding Films</p>
+      <p class="text-lg mb-8 font-opensans">30+ Minute Wedding Films — All Day Coverage Included</p>
       <a href="/films" class="bg-secondary text-base-100 px-6 py-3 rounded-full font-semibold font-opensans">
         WATCH FILMS
       </a>
@@ -63,11 +63,11 @@ const FeatureCard = component$(({ title, description }: { title: string; descrip
 ));
 
 const Features = component$(() => (
-  <section id="features" class="py-20 bg-neutral heirloom-section">
+  <section id="features" class="py-20 heirloom-section">
     <div class="w-full relative">
       <div class="container mx-auto text-center relative px-4 md:px-8 lg:px-16">
-        <h2 class="text-3xl font-bold mb-10 font-playfair text-secondary">
-          Our <span class="font-ephesis text-5xl mr-2">unique</span> approach
+        <h2 class="text-3xl font-bold mb-10 font-playfair text-base-100">
+          HEIRLOOM is <span class="font-ephesis text-5xl mr-2">different</span>
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {FEATURES.map((feature, index) => (
@@ -144,14 +144,21 @@ const LatestBlogPosts = component$(() => {
   );
 });
 
-const PhilosophySection = component$(() => (
-  <section class="bg-tertiary text-white py-20 philosophy-section">
-    <div class="container mx-auto px-6 md:px-8 lg:px-16 text-center">
-      <h2 class="text-3xl font-bold mb-4 font-playfair">Our Philosophy</h2>
-      <p class="mb-8 font-opensans">
-        At our core, we believe in capturing the essence of every moment. Our philosophy is rooted in authenticity, creativity, and a deep respect for the stories we tell. We strive to create timeless pieces that resonate with the heart and soul.
-      </p>
-      {/* Add more content or components as needed */}
+const UniqueApproachSection = component$(() => (
+  <section class="py-20 philosophy-section">
+    <div class="container mx-auto px-6 md:px-8 lg:px-16">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 font-playfair text-center">Our <span class="font-ephesis text-5xl mr-2">unique</span> approach</h2>
+        <div class="text-justify">
+          <p class="mb-6 font-opensans text-[1.1rem] leading-relaxed">
+            At HEIRLOOM Wedding Films, we craft cinematic stories that you'll cherish for a lifetime and pass down through generations. Whether it's a traditional ceremony close to home or an exotic destination elopement, we're here to capture your unique love story in full.
+          </p>
+          <p class="mb-6 font-opensans text-[1.1rem] leading-relaxed">
+            We take the time to get to know you, so your film truly reflects who you are. As passionate storytellers, we're constantly honing our craft to match the depth of your love.
+            We love working with couples who are excited about preserving their memories as much as we are about capturing them.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 ));
@@ -159,20 +166,20 @@ const PhilosophySection = component$(() => (
 const WhatYoullExperience = component$(() => {
   const steps: StepperStep[] = [
     {
-      title: "Discovery Call",
-      description: "We'll start with a friendly chat to discuss your vision and answer any questions. It's a chance to see if we're the right fit to capture your special day.",
+      title: "Initial Call",
+      description: "We'll have a friendly chat about your wedding vision and answer your questions. This helps us both decide if we're the perfect match for your special day.",
     },
     {
-      title: "Personalized Planning",
-      description: "As your wedding approaches, we'll meet to learn more about you, your family, and your wedding plans. This helps us prepare to film your day in a way that truly reflects who you are.",
+      title: "Custom Plan",
+      description: "Before the big day, we'll meet to get to know you, your family, and your wedding details. This ensures we capture your unique story in the most authentic way.",
     },
     {
-      title: "Your Wedding Day",
-      description: "On your big day, we'll be there from start to finish, capturing real moments without getting in the way. You can relax and enjoy every second while we document the memories.",
+      title: "Wedding Day",
+      description: "On your wedding day, we'll be there from start to finish. We'll capture all the special moments discreetly, allowing you to fully enjoy your celebration.",
     },
     {
-      title: "Receive Your Heirloom Film",
-      description: "Within 90 days after your wedding, you'll receive your film in a beautiful keepsake box. Gather your loved ones, pour some wine, and relive the magic. This isn't just a film; it's an heirloom to cherish for generations.",
+      title: "Film Delivery",
+      description: "Within 90 days, you'll get your wedding film. Gather your loved ones to relive the magic – it's not just a video, but a family heirloom.",
     }
   ];
 
@@ -180,7 +187,7 @@ const WhatYoullExperience = component$(() => {
     <section id="experience" class="py-20 bg-base-100">
       <div class="container mx-auto px-4 md:px-8 lg:px-16">
         <h2 class="text-3xl font-bold mb-6 font-playfair text-secondary text-center">
-          Your <span class="font-ephesis text-5xl">experience</span>
+          Your <span class="font-ephesis text-5xl">experience</span>&nbsp;&nbsp;with us
         </h2>
         <p class="font-opensans mb-12 text-lg max-w-3xl mx-auto text-center">
           From our first hello to the moment you receive your heirloom film, we're here to make everything easy and enjoyable.
@@ -202,7 +209,7 @@ export default component$(() => {
   return (
     <>
       <Hero />
-      <PhilosophySection />
+      <UniqueApproachSection />
       <Features />
       <WhatYoullExperience />
       <section id="faq" class="py-20 bg-accent faq-section">

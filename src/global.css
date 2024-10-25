@@ -45,6 +45,8 @@
 .heirloom-section {
   position: relative;
   overflow: hidden;
+  background-color: theme('colors.tertiary'); /* Updated background color */
+  color: theme('colors.base-100'); /* Updated text color for better contrast */
 }
 
 .heirloom-section::before {
@@ -54,17 +56,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/src/media/16-texture-square.webp'); /* Updated image */
+  background-image: url('/src/media/9-texture.webp'); /* Updated image */
   background-size: cover;
   background-position: center;
-  opacity: 0.3; /* Adjust opacity as needed */
-  pointer-events: none; /* Ensures the overlay doesn't interfere with interactions */
-  z-index: 1; /* Ensure the overlay is below the content */
+  opacity: 0.05; /* Adjusted opacity */
+  pointer-events: none;
+  z-index: 1;
 }
 
 .heirloom-section > * {
   position: relative;
-  z-index: 2; /* Ensure content is above the overlay */
+  z-index: 2;
 }
 
 .faq-section {
@@ -95,6 +97,8 @@
 .philosophy-section {
   position: relative;
   overflow: hidden;
+  background-color: theme('colors.neutral'); /* Updated background color */
+  color: theme('colors.secondary'); /* Updated text color for better contrast */
 }
 
 .philosophy-section::before {
@@ -104,17 +108,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/src/media/9-texture.webp'); /* Path to your texture image */
+  background-image: url('/src/media/16-texture-square.webp'); /* Updated image */
   background-size: cover;
   background-position: center;
-  opacity: .05; /* Adjust opacity as needed */
-  pointer-events: none; /* Ensures the overlay doesn't interfere with interactions */
-  z-index: 1; /* Ensure the overlay is below the content */
+  opacity: 0.3; /* Adjusted opacity */
+  pointer-events: none;
+  z-index: 1;
 }
 
 .philosophy-section > * {
   position: relative;
-  z-index: 2; /* Ensure content is above the overlay */
+  z-index: 2;
 }
 
 /* Remove overlay from navbar */
